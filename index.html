@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>React Potato</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--React-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!--React Dom-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!--Babel-->
+    <script
+      crossorigin
+      src="https://unpkg.com/babel-standalone@6/babel.min.js"
+    ></script>
+
+    <script type="text/babel">
+      function Potato(props) {
+        console.log(props);
+        return (
+          <div className="potato">
+            <h1>{props.potatoName}</h1>
+            <img src={props.imgSource} />
+            <br />
+            <a href={props.wiki}>{props.potatoName} wiki</a>
+          </div>
+        );
+      }
+
+      const element = (
+        <div>
+          <Potato
+            potatoName="Yukon Gold"
+            imgSource="http://www.specialtyproduce.com/sppics/5117.png"
+            wiki="https://en.wikipedia.org/wiki/Yukon_Gold_potato"
+          />
+          <Potato
+            potatoName="Laura"
+            imgSource="https://www.kartoffel-mueller.de/images/product_images/original_images/laura.jpg"
+            wiki="https://en.wikipedia.org/wiki/Laura_potato"
+          />
+        </div>
+      );
+      ReactDOM.render(element, document.getElementById("root"));
+    </script>
+  </body>
+</html>
